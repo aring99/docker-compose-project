@@ -19,6 +19,15 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
     ports:
       - "5050:80"
+  postgres_exporter:
+    image: prometheuscommunity/postgres-exporter:latest
+    container_name: postgres_exporter
+    environment:
+      DATA_SOURCE_NAME: "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres_db:5432/${POSTGRES_DB}?sslmode=disable"
+    ports:
+      - "9187:9187"  # Expose metrics at port 9187
+    depends_on:
+      - db
   redis:
     image: redis:6.0.7
     container_name: redis
@@ -35,12 +44,26 @@ services:
       - 8001:8001
     volumes:
       - redis_insight_volume_data:/db
+  redis_exporter:
+    image: oliver006/redis_exporter:latest
+    container_name: redis_exporter
+    environment:
+      REDIS_ADDR: redis:6379
+    ports:
+      - "9121:9121"  # Expose Redis metrics on port 9121
+    depends_on:
+      - redis
   prometheus:
     image: prom/prometheus
     volumes:
       - "./prometheus.yml:/etc/prometheus/prometheus.yml"
     ports:
       - 9090:9090
+    depends_on:
+      - db
+      - redis
+      - redis_exporter
+      - postgres_exporter
   grafana:
     image: grafana/grafana
     container_name: grafana
@@ -52,6 +75,8 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=${GF_SECURITY_ADMIN_PASSWORD}
     volumes:
       - ./grafana:/etc/grafana/provisioning/datasources
+    depends_on:
+      - db
 
 volumes:
   redis_volume_data:
