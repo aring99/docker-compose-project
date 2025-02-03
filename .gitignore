@@ -1,6 +1,7 @@
 .
 ..
 .bash_logout
+.viminfo
 .bashrc
 .cache
 .git
@@ -8,5 +9,4 @@
 .ssh
 .sudo_as_admin_successful
 .bash_history
-.viminfo
 snap/

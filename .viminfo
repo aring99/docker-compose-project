@@ -12,7 +12,7 @@
 ~h
 # Command Line History (newest to oldest):
 :wq
-|2,0,1738588962,,"wq"
+|2,0,1738589246,,"wq"
 :q
 |2,0,1738588801,,"q"
 :q!
@@ -29,28 +29,32 @@
 # Registers:
 
 # File marks:
-'0  12  4  ~/.gitignore
-|4,48,12,4,1738588962,"~/.gitignore"
+'0  4  7  ~/.gitignore
+|4,48,4,7,1738589246,"~/.gitignore"
 '1  12  4  ~/.gitignore
-|4,49,12,4,1738588943,"~/.gitignore"
-'2  12  3  ~/.gitignore
-|4,50,12,3,1738588801,"~/.gitignore"
-'3  12  3  ~/.gitignore
-|4,51,12,3,1738588801,"~/.gitignore"
-'4  12  3  ~/.gitignore
-|4,52,12,3,1738588790,"~/.gitignore"
+|4,49,12,4,1738588962,"~/.gitignore"
+'2  12  4  ~/.gitignore
+|4,50,12,4,1738588962,"~/.gitignore"
+'3  12  4  ~/.gitignore
+|4,51,12,4,1738588943,"~/.gitignore"
+'4  12  4  ~/.gitignore
+|4,52,12,4,1738588943,"~/.gitignore"
 '5  12  3  ~/.gitignore
-|4,53,12,3,1738588790,"~/.gitignore"
+|4,53,12,3,1738588801,"~/.gitignore"
 '6  12  3  ~/.gitignore
-|4,54,12,3,1738588790,"~/.gitignore"
+|4,54,12,3,1738588801,"~/.gitignore"
 '7  12  3  ~/.gitignore
-|4,55,12,3,1738588790,"~/.gitignore"
-'8  11  7  ~/.gitignore
-|4,56,11,7,1738588719,"~/.gitignore"
-'9  12  7  ~/.gitignore
-|4,57,12,7,1738588719,"~/.gitignore"
+|4,55,12,3,1738588801,"~/.gitignore"
+'8  12  3  ~/.gitignore
+|4,56,12,3,1738588801,"~/.gitignore"
+'9  12  3  ~/.gitignore
+|4,57,12,3,1738588790,"~/.gitignore"
 
 # Jumplist (newest first):
+-'  4  7  ~/.gitignore
+|4,39,4,7,1738589246,"~/.gitignore"
+-'  12  4  ~/.gitignore
+|4,39,12,4,1738589225,"~/.gitignore"
 -'  12  4  ~/.gitignore
 |4,39,12,4,1738588962,"~/.gitignore"
 -'  12  4  ~/.gitignore
@@ -59,6 +63,8 @@
 |4,39,12,3,1738588801,"~/.gitignore"
 -'  12  3  ~/.gitignore
 |4,39,12,3,1738588790,"~/.gitignore"
+-'  11  20  ~/.gitignore
+|4,39,11,20,1738588769,"~/.gitignore"
 -'  11  7  ~/.gitignore
 |4,39,11,7,1738588769,"~/.gitignore"
 -'  11  7  ~/.gitignore
@@ -98,7 +104,11 @@
 -'  2  1  ~/.gitignore
 |4,39,2,1,1738587977,"~/.gitignore"
 -'  2  1  ~/.gitignore
+|4,39,2,1,1738587977,"~/.gitignore"
+-'  2  1  ~/.gitignore
 |4,39,2,1,1738587947,"~/.gitignore"
+-'  1  0  ~/.gitignore
+|4,39,1,0,1738587839,"~/.gitignore"
 -'  1  0  ~/.gitignore
 |4,39,1,0,1738587839,"~/.gitignore"
 -'  1  0  ~/.gitignore
@@ -241,31 +251,23 @@
 |4,39,5,14,1738587159,"~/test_redis.sh"
 -'  5  14  ~/test_redis.sh
 |4,39,5,14,1738587159,"~/test_redis.sh"
--'  5  14  ~/test_redis.sh
-|4,39,5,14,1738587159,"~/test_redis.sh"
--'  5  14  ~/test_redis.sh
-|4,39,5,14,1738587159,"~/test_redis.sh"
--'  5  14  ~/test_redis.sh
-|4,39,5,14,1738587159,"~/test_redis.sh"
--'  5  14  ~/test_redis.sh
-|4,39,5,14,1738587159,"~/test_redis.sh"
--'  5  14  ~/test_redis.sh
-|4,39,5,14,1738587159,"~/test_redis.sh"
 
 # History of marks within files (newest to oldest):
 
 > ~/.gitignore
-	*	1738588960	0
-	"	12	4
-	^	12	5
-	.	12	4
+	*	1738589242	0
+	"	4	7
+	^	4	8
+	.	4	7
 	+	13	0
 	+	1	1
 	+	2	1
-	+	10	13
-	+	11	6
-	+	11	8
+	+	11	13
+	+	11	19
+	+	11	21
 	+	12	4
+	+	12	0
+	+	4	7
 
 > ~/test_redis.sh
 	*	1738587157	0
