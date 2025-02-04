@@ -52,7 +52,7 @@ services:
     environment:
       REDIS_ADDR: redis:6379
     ports:
-      - "9121:9121"  # Expose Redis metrics on port 9121
+      - "9122:9122"  # Expose Redis metrics on port 9122
     networks:
       - monitoring
     depends_on:
@@ -79,6 +79,8 @@ services:
     environment:
       - GF_SECURITY_ADMIN_USER=${GF_SECURITY_ADMIN_USER}
       - GF_SECURITY_ADMIN_PASSWORD=${GF_SECURITY_ADMIN_PASSWORD}
+      - PROMETHEUS_CONTAINER=${PROMETHEUS_CONTAINER}
+      - PROMETHEUS_PORT=${PROMETHEUS_PORT}
     volumes:
       - ./config/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml  # Mounts the Grafana data source configuration file
       - ./config/dashboard.yml:/etc/grafana/provisioning/dashboards/dashboard.yaml  # Mounts the Grafana dashboard configuration file

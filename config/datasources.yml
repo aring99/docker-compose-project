@@ -11,5 +11,5 @@ datasources:  # List of data sources to be configured
     # Access mode - 'proxy' means requests are made from the Grafana server,
     # while 'direct' would mean requests are made from the user's browser.
 
-    url: http://prometheus_c:9090 # The URL where the Prometheus server can be accessed.
+    url: http://${PROMETHEUS_CONTAINER}:${PROMETHEUS_PORT} # The URL where the Prometheus server can be accessed.
     # This uses environment variables for dynamic configuration of the container name and port.
