@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   db:
-    container_name: postgres_container
+    container_name: postgres_c
     image: postgres
     restart: always
     environment:
@@ -11,7 +11,7 @@ services:
     ports:
       - "5432:5432"
   pgadmin:
-    container_name: pgadmin4_container
+    container_name: pgadmin4_c
     image: dpage/pgadmin4
     restart: always
     environment:
@@ -21,16 +21,18 @@ services:
       - "5050:80"
   postgres_exporter:
     image: prometheuscommunity/postgres-exporter:latest
-    container_name: postgres_exporter
+    container_name: postgres_exporter_c
     environment:
       DATA_SOURCE_NAME: "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres_db:5432/${POSTGRES_DB}?sslmode=disable"
     ports:
       - "9187:9187"  # Expose metrics at port 9187
+    networks:
+      - monitoring
     depends_on:
       - db
   redis:
     image: redis:6.0.7
-    container_name: redis
+    container_name: redis_c
     restart: always
     volumes:
       - redis_volume_data:/data
@@ -38,7 +40,7 @@ services:
       - 6380:6380
   redis_insight:
     image: redislabs/redisinsight:1.14.0
-    container_name: redis_insight
+    container_name: redis_insight_c
     restart: always
     ports:
       - 8001:8001
@@ -46,38 +48,60 @@ services:
       - redis_insight_volume_data:/db
   redis_exporter:
     image: oliver006/redis_exporter:latest
-    container_name: redis_exporter
+    container_name: redis_exporter_c
     environment:
       REDIS_ADDR: redis:6379
     ports:
       - "9121:9121"  # Expose Redis metrics on port 9121
+    networks:
+      - monitoring
     depends_on:
       - redis
   prometheus:
     image: prom/prometheus
+    container_name: ${PROMETHEUS_CONTAINER}
     volumes:
-      - "./prometheus.yml:/etc/prometheus/prometheus.yml"
+      - "./config/prometheus.yml:/etc/prometheus/prometheus.yml"
     ports:
-      - 9090:9090
+      - ${PROMETHEUS_PORT}:${PROMETHEUS_PORT}
+    networks:
+      - monitoring
     depends_on:
-      - db
-      - redis
+      - node_exporter
       - redis_exporter
       - postgres_exporter
   grafana:
     image: grafana/grafana
-    container_name: grafana
+    container_name: ${GRAFANA_CONTAINER}
     ports:
-      - 3000:3000
+      - ${GRAFANA_PORT}:${GRAFANA_PORT}
     restart: unless-stopped
     environment:
       - GF_SECURITY_ADMIN_USER=${GF_SECURITY_ADMIN_USER}
       - GF_SECURITY_ADMIN_PASSWORD=${GF_SECURITY_ADMIN_PASSWORD}
     volumes:
-      - ./grafana:/etc/grafana/provisioning/datasources
+      - ./config/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml  # Mounts the Grafana data source configuration file
+      - ./config/dashboard.yml:/etc/grafana/provisioning/dashboards/dashboard.yaml  # Mounts the Grafana dashboard configuration file
+      - ./config/dashboard.json:/var/lib/grafana/dashboards/dashboard.json  # Mounts a Grafana dashboard definition file
+    networks:
+      - monitoring
     depends_on:
-      - db
-
+      - prometheus
+  node_exporter:
+    image: prom/node-exporter:latest
+    container_name: ${NODE_EXPORTER_CONTAINER}
+    ports:
+      - ${NODE_EXPORTER_PORT}:${NODE_EXPORTER_PORT}
+    volumes:
+      - /proc:/host/proc:ro  # Mounts the /proc directory from the host into the container (read-only)
+      - /sys:/host/sys:ro  # Mounts the /sys directory from the host into the container (read-only)
+      - /:/rootfs:ro  # Mounts the root filesystem of the host into the container (read-only)    
+    networks:
+      - monitoring
+# Networks
+networks:
+  monitoring:
+    driver: bridge
 volumes:
   redis_volume_data:
   redis_insight_volume_data:

@@ -1,0 +1,15 @@
+# Grafana Datasources Configuration
+# This file defines the data sources that Grafana will use to fetch data for dashboards.
+
+apiVersion: 1  # Specifies the API version for this configuration.
+
+datasources:  # List of data sources to be configured
+  - name: Prometheus  # The name of the data source, as it will appear in Grafana.
+    type: prometheus  # The type of the data source, indicating it is a Prometheus instance.
+    access: proxy  # Access mode; 'proxy' means requests will go through the Grafana server.
+
+    # Access mode - 'proxy' means requests are made from the Grafana server,
+    # while 'direct' would mean requests are made from the user's browser.
+
+    url: http://prometheus_c:9090 # The URL where the Prometheus server can be accessed.
+    # This uses environment variables for dynamic configuration of the container name and port.
