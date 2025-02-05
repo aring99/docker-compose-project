@@ -19,10 +19,11 @@ This project was made using Ubuntu 24.04. It uses Docker Compose for setting up 
 <!-- tocstop -->
 ## Installation
 ### Cloning From Git
-First the project needs to be cloned to an appropriate machine (Ubuntu or Debian based machine). Afterwards, change directories into the project. The commands are provided below:
+First the project needs to be cloned to an appropriate machine (Ubuntu or Debian based machine). Afterwards, change directories into the project. Finally switch to the master branch to see the code. The commands are provided below:
 ```bash
 git clone https://github.com/aring99/docker-compose-project
 cd docker-compose-project
+git checkout master
 ```
 
 ### Running the Setup Script
