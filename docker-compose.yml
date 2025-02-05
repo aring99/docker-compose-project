@@ -10,6 +10,8 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
   pgadmin:
     container_name: pgadmin4_c
     image: dpage/pgadmin4
@@ -50,7 +52,7 @@ services:
     image: oliver006/redis_exporter:latest
     container_name: redis_exporter_c
     environment:
-      REDIS_ADDR: redis:6379
+      REDIS_ADDR: redis:6380
     ports:
       - "9122:9122"  # Expose Redis metrics on port 9122
     networks:
@@ -107,5 +109,5 @@ networks:
 volumes:
   redis_volume_data:
   redis_insight_volume_data:
-
+  postgres_data:
 
