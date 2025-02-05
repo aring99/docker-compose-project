@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  db:
+  postgres:
     container_name: postgres_c
     image: postgres
     restart: always
@@ -31,7 +31,7 @@ services:
     networks:
       - monitoring
     depends_on:
-      - db
+      - postgres
   redis:
     image: redis:6.0.7
     container_name: redis_c
