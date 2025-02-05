@@ -54,9 +54,14 @@ Redis test Script:
 ## Software Services
 This Section describes how to connect and access the services. 
 ### pgAdmin
-
+To connect to pgAdmin, the following needs to be entered on a browser: ```http://localhost:5050```
+Alternatively, in the case a VM is used or the previous command fails, instead use the IPv4 address instead of localhost. For example, if the IPv4 address is "44.202.109.53", the command to be entered is: ```http://44.202.109.53:5050```
 ### Redis Insight
-
+To connect to Redis Insight, the following needs to be entered on a browser: ```http://localhost:8001```
+Alternatively, in the case a VM is used or the previous command fails, instead use the IPv4 address instead of localhost. For example, if the IPv4 address is "44.202.109.53", the command to be entered is: ```http://44.202.109.53:8001```
 ### Prometheus
-
+To connect to Prometheus, the following needs to be entered on a browser: ```http://localhost:9090```
+Alternatively, in the case a VM is used or the previous command fails, instead use the IPv4 address instead of localhost. For example, if the IPv4 address is "44.202.109.53", the command to be entered is: ```http://44.202.109.53:9090```
 ### Grafana
+To connect to Grafana, the following needs to be entered on a browser: ```http://localhost:3000```
+Alternatively, in the case a VM is used or the previous command fails, instead use the IPv4 address instead of localhost. For example, if the IPv4 address is "44.202.109.53", the command to be entered is: ```http://44.202.109.53:3000```
