@@ -75,8 +75,14 @@ Alternatively, in the case a VM is used or the previous command fails, instead u
 
 6. After giving the database a name, the  ```Connection``` field needs to be opened. The IPv4 address retrieved on step 3 needs to be pasted in the ```Host name/address``` field. Finally, the ```Username``` and ```Password``` fields need to be set to ```root``` 
 ### Redis Insight
-To connect to Redis Insight, the following needs to be entered on a browser: ```http://localhost:8001```
+1. To connect to Redis Insight, the following needs to be entered on a browser: ```http://localhost:8001```
 Alternatively, in the case a VM is used or the previous command fails, instead use the IPv4 address instead of localhost. For example, if the IPv4 address is "44.202.109.53", the command to be entered is: ```http://44.202.109.53:8001```
+
+2. After connecting, click the field ```I already have a database```.
+
+3. On the following screen, continue with ```Connect to a Redis Database``` option.
+
+4.  In this screen, the ```Username``` should be given as ```redis```, the ```Port``` as ```6379``` and the ```Name``` can be any name.
 ### Prometheus
 To connect to Prometheus, the following needs to be entered on a browser: ```http://localhost:9090```
 Alternatively, in the case a VM is used or the previous command fails, instead use the IPv4 address instead of localhost. For example, if the IPv4 address is "44.202.109.53", the command to be entered is: ```http://44.202.109.53:9090```
