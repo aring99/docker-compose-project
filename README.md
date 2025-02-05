@@ -4,9 +4,9 @@ This project was made using Ubuntu 22.04. This Project uses Docker Compose for s
 ## Technical Documentation for detailed explanation
 [Link To Technical Documentation]()
 <!-- toc -->
-- [Installing](#installing)
+- [Installation](#installation)
   - [Cloning from Git](#cloning-from-git)
-  - [Running the Install Script](#running-the-install-script)
+  - [Running the Setup Script](#running-the-setup-script)
 - [Running the Software](#running-the-software)
   - [Running Docker Compose](#running-docker-compose)
   - [Running Test Scripts](#running-test-scripts)
@@ -16,22 +16,21 @@ This project was made using Ubuntu 22.04. This Project uses Docker Compose for s
   - [Prometheus](#prometheus)
   - [Grafana](#grafana)
 <!-- tocstop -->
-## Installing
-
+## Installation
 ### Cloning From Git
 First the project needs to be cloned to an appropriate machine (Ubuntu or Debian based machine). Afterwards, change directories into the project. The commands are provided below:
 ```bash
 git clone https://github.com/aring99/docker-compose-project
 cd docker-compose-project
 ```
-### Running the Install Script
+
+### Running the Setup Script
 Once inside the docker-compose-project directory, the setup script needs to be executed to install neccessary software such as Docker and Docker Compose. Execute the command below:
 ```bash
 ./setup_all.sh
 ```
 
 ## Running the Software
-
 ### Running Docker Compose
 To run the project, docker compose needs to be brought up. To achieve that, the command below should be executed:
 ```bash
@@ -51,6 +50,13 @@ Redis test Script:
 ```bash
 ./test_redis.sh
 ```
+
 ## Software Services
+This Section describes how to connect and access the services. 
+### pgAdmin
 
+### Redis Insight
 
+### Prometheus
+
+### Grafana
