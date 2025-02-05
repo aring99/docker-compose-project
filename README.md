@@ -25,7 +25,7 @@ cd docker-compose-project
 ```
 
 ### Running the Setup Script
-Once inside the docker-compose-project directory, the setup script needs to be executed to install neccessary software such as Docker and Docker Compose. Execute the command below:
+Once inside the docker-compose-project directory, the setup script needs to be executed to install necessary software such as Docker and Docker Compose. Execute the command below:
 ```bash
 ./setup_all.sh
 ```
@@ -96,4 +96,4 @@ Alternatively, in the case a VM is used or the previous command fails, instead u
 
 3. Following the login screen, click on ```Connections``` ,afterwards on ```Data sources``` on the left. Alternatively, search ```Data sources``` on the search bar. This will show that the prometheus data from the node_exporter is already configured.
 
-4. To check this data, click on ```Dashboards``` on the left or use the searchbar to reach the Dashboards page. An already configured dashboard called "Node Exporer Full" is present. Clicking on it will show the basic metrics of the system.  
+4. To check this data, click on ```Dashboards``` on the left or use the searchbar to reach the Dashboards page. An already configured dashboard called "Node Exporter Full" is present. Clicking on it will show the basic metrics of the system.  
