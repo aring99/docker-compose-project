@@ -54,8 +54,26 @@ Redis test Script:
 ## Software Services
 This Section describes how to connect and access the services. 
 ### pgAdmin
-To connect to pgAdmin, the following needs to be entered on a browser: ```http://localhost:5050```
+1. To connect to pgAdmin, the following needs to be entered on a browser: ```http://localhost:5050```
 Alternatively, in the case a VM is used or the previous command fails, instead use the IPv4 address instead of localhost. For example, if the IPv4 address is "44.202.109.53", the command to be entered is: ```http://44.202.109.53:5050```
+
+2. After connecting, a login screen will be shown. The login details are: email address: ```admin@admin.com``` and password: ```root``
+
+3. To create databases, the container IPv4 is required. To find this information, the following steps need to be followed:
+ ```
+   1. Execute:
+   docker container ls
+
+   2. copy the id of the container "postgres" and run the following command:
+   docker inspect <postgres-container-id>
+
+   3.After running the command provided in the second step, find the field "IPAddress" and copy the IPv4 value.
+   ```
+4. To create a new server, press "Add New Server"
+
+5. This will open the general tab first and the database needs to be named.
+
+6. After giving the database a name, the  ```Connection``` field needs to be opened. The IPv4 address retrieved on step 3 needs to be pasted in the ```Host name/address``` field. Finally, the ```Username``` and ```Password``` fields need to be set to ```root``` 
 ### Redis Insight
 To connect to Redis Insight, the following needs to be entered on a browser: ```http://localhost:8001```
 Alternatively, in the case a VM is used or the previous command fails, instead use the IPv4 address instead of localhost. For example, if the IPv4 address is "44.202.109.53", the command to be entered is: ```http://44.202.109.53:8001```
