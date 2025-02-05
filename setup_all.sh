@@ -20,8 +20,8 @@ echo "Installing Postgres Exporter..."
 bash installScripts/install_postgres_exporter.sh
 
 # Install Redis CLI
-echo "Installing Redis CLI..."
-bash installScripts/install_redis_cli.sh
+#echo "Installing Redis CLI..."
+#bash installScripts/install_redis_cli.sh
 
 # Install Redis Exporter
 echo "Installing Redis Exporter..."
