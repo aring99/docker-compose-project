@@ -89,5 +89,11 @@ Alternatively, in the case a VM is used or the previous command fails, instead u
 
 2. To see the targets, click on ```Status``` and ```Target health```
 ### Grafana
-To connect to Grafana, the following needs to be entered on a browser: ```http://localhost:3000```
+1.To connect to Grafana, the following needs to be entered on a browser: ```http://localhost:3000```
 Alternatively, in the case a VM is used or the previous command fails, instead use the IPv4 address instead of localhost. For example, if the IPv4 address is "44.202.109.53", the command to be entered is: ```http://44.202.109.53:3000```
+
+2. A login screen will appear, both the ```username``` and ```password``` fields are ```admin```. Afterwards, an optional "choose new password" page is opened.
+
+3. Following the login screen, click on ```Connections``` ,afterwards on ```Data sources``` on the left. Alternatively, search ```Data sources``` on the search bar. This will show that the prometheus data from the node_exporter is already configured.
+
+4. To check this data, click on ```Dashboards``` on the left or use the searchbar to reach the Dashboards page. An already configured dashboard called "Node Exporer Full" is present. Clicking on it will show the basic metrics of the system.  
