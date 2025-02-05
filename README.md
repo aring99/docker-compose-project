@@ -84,8 +84,10 @@ Alternatively, in the case a VM is used or the previous command fails, instead u
 
 4.  In this screen, the ```Username``` should be given as ```redis```, the ```Port``` as ```6379``` and the ```Name``` can be any name.
 ### Prometheus
-To connect to Prometheus, the following needs to be entered on a browser: ```http://localhost:9090```
+1.To connect to Prometheus, the following needs to be entered on a browser: ```http://localhost:9090```
 Alternatively, in the case a VM is used or the previous command fails, instead use the IPv4 address instead of localhost. For example, if the IPv4 address is "44.202.109.53", the command to be entered is: ```http://44.202.109.53:9090```
+
+2. To see the targets, click on ```Status``` and ```Target health```
 ### Grafana
 To connect to Grafana, the following needs to be entered on a browser: ```http://localhost:3000```
 Alternatively, in the case a VM is used or the previous command fails, instead use the IPv4 address instead of localhost. For example, if the IPv4 address is "44.202.109.53", the command to be entered is: ```http://44.202.109.53:3000```
