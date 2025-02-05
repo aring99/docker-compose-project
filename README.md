@@ -37,3 +37,16 @@ To run the project, docker compose needs to be brought up. To achieve that, the 
 docker compose up -d
 ```
 If the software needs to be closed, ```docker compose down``` should be entered.
+
+### Running Test Scripts
+Two test scripts are available. The first script pings the ```PostgreSQL``` service and the second script pings the ```Redis``` service. The commands to run the script are provided below:
+
+PostgreSQL test Script:
+```bash
+./test_postgres.sh
+```
+
+Redis test Script:
+```bash
+./test_redis.sh
+```
