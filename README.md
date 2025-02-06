@@ -1,7 +1,7 @@
 # Docker Compose Project
 This project was made using Ubuntu 24.04. It uses Docker Compose for setting up various services for monitoring, database, and Redis management. It includes PostgreSQL, Redis, Grafana, Prometheus, pgAdmin and Redis Insight. Exporters are also used to gather and visualize data. The software can be run by first using the setup script and running docker compose afterwards.
 ## Technical Documentation for detailed explanation
-[Link To Technical Documentation]()
+[Link To Technical Documentation](https://docs.google.com/document/d/1sSnEayS-km0j86F9PqvO8MYxN9SuGQWQehigUFj71rc/edit?usp=sharing)
 
 ## Overview
 <!-- toc -->
